@@ -1,0 +1,17 @@
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\bin\Debug\BolnicaVezba.exe.config
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\bin\Debug\BolnicaVezba.exe
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\bin\Debug\BolnicaVezba.pdb
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\MainWindow.g.cs
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\App.g.cs
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba_MarkupCompile.cache
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba_MarkupCompile.lref
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\MainWindow.baml
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba.g.resources
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba.Properties.Resources.resources
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba.csproj.GenerateResource.cache
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba.csproj.CoreCompileInputs.cache
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba.exe
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba.pdb
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\UnosNovog.g.cs
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\UnosNovog.baml
+C:\Users\Nikola\OneDrive\Desktop\VezbanjeZadaciPPPIspit\BolnicaVezba\BolnicaVezba\obj\Debug\BolnicaVezba.csproj.AssemblyReference.cache

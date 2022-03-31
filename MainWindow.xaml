@@ -1,0 +1,121 @@
+﻿<Window x:Class="BolnicaVezba.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaVezba"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="609.401" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="PrikazOdeljenja">
+            <StackPanel>
+                <TextBlock Text="{Binding Naziv}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="PrikazPacijenta">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Ime}"/>
+                <TextBlock Text=" "/>
+                <TextBlock Text="{Binding Prezime}"/>
+                <TextBlock Text=" "/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="PrikazPrioriteta">
+            <StackPanel>
+                <TextBlock Text="{Binding Prioritet}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="PrikazPrioritetaPacijent">
+            <StackPanel>
+                <TextBlock Text="{Binding Ime}"/>
+                <TextBlock Text=" "/>
+                <TextBlock Text="{Binding Prezime}"/>
+                <TextBlock Text=" "/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Menu>
+            <MenuItem Header="Rad sa pacijentima">
+                <MenuItem Header="Unos novog pacijenta" Name="UnosNovog" Click="UnosNovog_Click"/>
+            </MenuItem>
+
+        </Menu>
+        <DataGrid x:Name="dataGridBolnica" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="196" VerticalAlignment="Top" Width="419" Margin="29,53,0,0" LoadingRowDetails="dataGridBolnica_LoadingRowDetails" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Sifra pacijenta" Binding="{Binding IDPacijent}" Width="*"/>
+                <DataGridTextColumn Header="Ime pacijenta" Binding="{Binding Ime}" Width="*"/>
+                <DataGridTextColumn Header="Prezime pacijenta" Binding="{Binding Prezime}" Width="*"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Odeljenje"/>
+                                <TextBox x:Name="tbOdeljenje" Text="{Binding OdeljenjeID}" Margin="5"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Text="Soba"/>
+                                <TextBox x:Name="tbSoba" Text="{Binding SobaID}" Margin="5"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Text="Broj dana"/>
+                                <TextBox x:Name="tbBrDana" Text="{Binding BrDana}" Margin="5"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <GroupBox Header="Naplata" HorizontalAlignment="Left" Height="196" Margin="505,53,0,0" VerticalAlignment="Top" Width="266">
+            <Grid>
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Broj dana" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Text="Participacija" VerticalAlignment="Top" RenderTransformOrigin="0.506,2.198"/>
+                <TextBox x:Name="tbBrDana" HorizontalAlignment="Left" Height="23" Margin="99,9,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="tbParticipacija" HorizontalAlignment="Left" Height="23" Margin="99,43,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <Button x:Name="btnIzracunaj" Content="Izracunaj" HorizontalAlignment="Left" Margin="80,93,0,0" VerticalAlignment="Top" Width="75" Click="btnIzracunaj_Click"/>
+                <TextBlock HorizontalAlignment="Left" Margin="23,140,0,0" TextWrapping="Wrap" Text="Za naplatu" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="159,140,0,0" TextWrapping="Wrap" Text="dinara" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbNaplata" HorizontalAlignment="Left" Height="23" Margin="84,136,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="70"/>
+
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gbPretragaPoOdeljenju" Header="Pretraga po odeljenju" HorizontalAlignment="Left" Height="127" Margin="29,277,0,0" VerticalAlignment="Top" Width="270">
+            <Grid>
+                <Label Content="Odeljenje" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                <ComboBox Name="cmbPretragaPoOdeljenju" ItemTemplate="{StaticResource ResourceKey=PrikazOdeljenja}" HorizontalAlignment="Left" Margin="87,14,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbPretragaPoOdeljenju_SelectionChanged"/>
+                <Button x:Name="btnMaxDana" Click="btnMaxDana_Click" Content="Max Dana" HorizontalAlignment="Left" Margin="87,61,0,0" VerticalAlignment="Top" Width="75"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gbPrioritet" Header="Pacijenti koji su lezali vise od 3 dana" HorizontalAlignment="Left" Height="128" Margin="29,435,0,0" VerticalAlignment="Top" Width="270">
+            <Grid>
+                <TextBlock HorizontalAlignment="Left" Margin="28,36,0,0" TextWrapping="Wrap" Text="Prioritet" VerticalAlignment="Top"/>
+                <ComboBox Name="cmbPrioritet" ItemTemplate="{StaticResource ResourceKey=PrikazPrioriteta}" HorizontalAlignment="Left" Margin="96,36,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbPrioritet_SelectionChanged"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gbOtpust" Header="Otputs" HorizontalAlignment="Left" Height="127" Margin="473,277,0,0" VerticalAlignment="Top" Width="298">
+            <Grid>
+                <TextBlock HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" Text="Sifra pacijenta" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbSifraPacijenta" HorizontalAlignment="Left" Height="23" Margin="103,20,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <Button x:Name="btnOtpusti" Content="Otpusti" Click="btnOtpusti_Click" HorizontalAlignment="Left" Margin="103,60,0,0" VerticalAlignment="Top" Width="75" />
+
+            </Grid>
+        </GroupBox>
+        <ListBox ItemTemplate="{StaticResource ResourceKey=PrikazPacijenta}" x:Name="lbListaBolesnika" HorizontalAlignment="Left" Height="118" Margin="346,445,0,0" VerticalAlignment="Top" Width="307"/>
+        <ListBox x:Name="lbPacijentiPrioritet" ItemTemplate="{StaticResource ResourceKey=PrikazPrioritetaPacijent}" Visibility="Hidden"  Height="100" Width="100" Margin="395,463,297,15"/>
+        
+    </Grid>
+</Window>
